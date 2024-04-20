@@ -1,5 +1,161 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8926568675821060203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Propulsion/Propulsion
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Propulsion/Propulsion
+  Guid:
+    Data1: 844273324
+    Data2: 1157784926
+    Data3: 999776913
+    Data4: -978091212
+  Banks:
+  - {fileID: 5825735032159214408}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1489834629944297735}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9639
+--- !u!114 &-8759285184362112721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../Documents/FMOD Studio/projects/StudentJam24/studentJam24/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638492306805729662
+  FileSizes:
+  - Name: Desktop
+    Value: 1188
+  Exists: 1
+--- !u!114 &-5583241813643031677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Breath/Breath
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Breath/Breath
+  Guid:
+    Data1: 1911294206
+    Data2: 1170550168
+    Data3: -1390011502
+    Data4: -1970063816
+  Banks:
+  - {fileID: 5825735032159214408}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11206
+--- !u!114 &-3691868692761331653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/SpaceAmbience
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/SpaceAmbience
+  Guid:
+    Data1: -1123837389
+    Data2: 1250899881
+    Data3: -378953592
+    Data4: 2009250547
+  Banks:
+  - {fileID: 5825735032159214408}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 20000
+--- !u!114 &-3148432456905672423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Balizas/BalizaB
+  m_EditorClassIdentifier: 
+  Path: event:/Balizas/BalizaB
+  Guid:
+    Data1: 1884547182
+    Data2: 1129293591
+    Data3: -1537661300
+    Data4: 1896716028
+  Banks:
+  - {fileID: 613436171927615163}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8647
+--- !u!114 &-292448120412349426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Propulsion/RotateRight
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Propulsion/RotateRight
+  Guid:
+    Data1: 1840529192
+    Data2: 1240758879
+    Data3: -250968899
+    Data4: -2073954119
+  Banks:
+  - {fileID: 5825735032159214408}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 474
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,10 +168,141 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks: []
-  EditorEvents: []
+  EditorBanks:
+  - {fileID: -8759285184362112721}
+  - {fileID: 613436171927615163}
+  - {fileID: 5825735032159214408}
+  EditorEvents:
+  - {fileID: -3148432456905672423}
+  - {fileID: 5380560604928918046}
+  - {fileID: -292448120412349426}
+  - {fileID: -3691868692761331653}
+  - {fileID: 9097196358818689332}
+  - {fileID: -8926568675821060203}
+  - {fileID: -5583241813643031677}
   EditorParameters: []
-  MasterBanks: []
-  StringsBanks: []
-  cacheTime: 0
+  MasterBanks:
+  - {fileID: 5825735032159214408}
+  StringsBanks:
+  - {fileID: -8759285184362112721}
+  cacheTime: 638492306805729662
   cacheVersion: 131617
+--- !u!114 &613436171927615163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Bank A.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../Documents/FMOD Studio/projects/StudentJam24/studentJam24/Build/Desktop/Bank
+    A.bank
+  Name: Bank A
+  StudioPath: bank:/Bank A
+  lastModified: 638492290584310922
+  FileSizes:
+  - Name: Desktop
+    Value: 170912
+  Exists: 1
+--- !u!114 &1489834629944297735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Propulsion/Forward
+  m_EditorClassIdentifier: 
+  Name: Forward
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1106967607
+    data2: 4126372488
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &5380560604928918046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Balizas/BalizaA
+  m_EditorClassIdentifier: 
+  Path: event:/Balizas/BalizaA
+  Guid:
+    Data1: 2018086859
+    Data2: 1205984621
+    Data3: -2073231741
+    Data4: 1929291430
+  Banks:
+  - {fileID: 613436171927615163}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12000
+--- !u!114 &5825735032159214408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../Documents/FMOD Studio/projects/StudentJam24/studentJam24/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638492306805709661
+  FileSizes:
+  - Name: Desktop
+    Value: 277376
+  Exists: 1
+--- !u!114 &9097196358818689332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Propulsion/RotateLeft
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Propulsion/RotateLeft
+  Guid:
+    Data1: 87364756
+    Data2: 1241526236
+    Data3: -1853440623
+    Data4: 1637230950
+  Banks:
+  - {fileID: 5825735032159214408}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 474
