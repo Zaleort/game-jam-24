@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class Structure : MonoBehaviour
 {
     private float damage = 100f;
+
+    [FMODUnity.EventRef]
+    public string repairedEvent;
 
     void Start()
     {
@@ -22,6 +26,7 @@ public class Structure : MonoBehaviour
 
         if (isRepaired() == true)
         {
+          RuntimeManager.PlayOneShot(repairedEvent, transform.position);
           GameController.Instance.StructureIsRepaired();
         }
   }
