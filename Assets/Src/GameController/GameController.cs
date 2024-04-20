@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
 
   public void StructureIsRepaired()
   {
-    
+    player.RefillOxygen(15);
   }
 
   public void GameOver()

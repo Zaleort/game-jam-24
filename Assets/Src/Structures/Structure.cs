@@ -13,16 +13,18 @@ public class Structure : MonoBehaviour
 
     void Update()
     {
-      if (isRepaired() == true)
-      {
-        GameController.Instance.StructureIsRepaired();
-      }
+
     }
 
     public void Repair()
     {
         damage -= 25f;
-    }
+
+        if (isRepaired() == true)
+        {
+          GameController.Instance.StructureIsRepaired();
+        }
+  }
 
     private bool isRepaired()
     {
