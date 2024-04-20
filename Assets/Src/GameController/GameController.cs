@@ -6,7 +6,12 @@ public class GameController : MonoBehaviour
 {
   public static GameController Instance { get; private set; }
   public static Player player;
-  public static Structure[] structures;
+  public static List<Structure> structures;
+
+  public static int DIFFICULTY_EASY = 0;
+  public static int DIFFICULTY_MEDIUM = 1;
+  public static int DIFFICULTY_HARD = 2;
+  public int difficulty = DIFFICULTY_EASY;
 
   private void Awake()
   {
@@ -24,6 +29,7 @@ public class GameController : MonoBehaviour
   public void StructureIsRepaired()
   {
     player.RefillOxygen(15);
+    difficulty += 1;
   }
 
   public void GameOver()
