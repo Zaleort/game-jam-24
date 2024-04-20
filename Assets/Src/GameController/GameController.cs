@@ -4,8 +4,28 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+  public static GameController Instance { get; private set; }
+  public static Player player;
+  public static Structure[] structures;
+
+  private void Awake()
+  {
+    if (Instance == null)
+    {
+      Instance = this;
+      DontDestroyOnLoad(gameObject);
+    }
+    else
+    {
+      Destroy(gameObject);
+    }
+  }
+
+  public void StructureIsRepaired()
+  {
+    
+  }
+  void Start()
     {
         
     }

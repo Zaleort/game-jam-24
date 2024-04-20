@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Structure : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private float damage = 100f;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+      if (isRepaired() == true)
+      {
+      GameController.Instance.StructureIsRepaired();
+      }
+    }
+
+    public void Repair()
+    {
+        damage -= 25f;
+    }
+
+    private bool isRepaired()
+    {
+        return damage <= 0;
     }
 }
