@@ -25,14 +25,19 @@ public class GameController : MonoBehaviour
   {
     
   }
-  void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+  public void GameOver()
+  {
+
+  }
+  void Start()
+  {
         
-    }
+  }
+
+  // Update is called once per frame
+  void Update()
+  {
+        
+  }
 }

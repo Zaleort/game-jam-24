@@ -15,7 +15,7 @@ public class Structure : MonoBehaviour
     {
       if (isRepaired() == true)
       {
-      GameController.Instance.StructureIsRepaired();
+        GameController.Instance.StructureIsRepaired();
       }
     }
 
