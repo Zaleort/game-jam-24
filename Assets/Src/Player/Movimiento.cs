@@ -1,47 +1,84 @@
 using System.Collections;
 using UnityEngine;
+using FMODUnity;  // Importa el namespace de FMODUnity
 
 public class Movimiento : MonoBehaviour
 {
     public float fuerzaMovimiento = 10f;
     public float fuerzaGiro = 100f;
     public float tiempoGiro = 0.2f;
-    public float maxVelocidad = 5f;  // Maximum speed
+    public float maxVelocidad = 5f;  // Velocidad máxima
 
     private bool enMovimiento = false;
     private bool girando = false;
 
+    // Referencias a los eventos de sonido de FMOD usando EventReference
+    public EventReference sonidoMovimientoAdelante;
+    public EventReference sonidoMovimientoAtras;
+    public EventReference sonidoGiroDerecha;
+    public EventReference sonidoGiroIzquierda;
+
+    private FMOD.Studio.EventInstance instanciaMovimientoAdelante;
+    private FMOD.Studio.EventInstance instanciaMovimientoAtras;
+    private FMOD.Studio.EventInstance instanciaGiroDerecha;
+    private FMOD.Studio.EventInstance instanciaGiroIzquierda;
+
+    void Start()
+    {
+        // Crear instancias de los eventos de FMOD usando RuntimeManager.CreateInstance con EventReference
+        instanciaMovimientoAdelante = RuntimeManager.CreateInstance(sonidoMovimientoAdelante);
+        instanciaMovimientoAtras = RuntimeManager.CreateInstance(sonidoMovimientoAtras);
+        instanciaGiroDerecha = RuntimeManager.CreateInstance(sonidoGiroDerecha);
+        instanciaGiroIzquierda = RuntimeManager.CreateInstance(sonidoGiroIzquierda);
+
+    }
+
     void Update()
     {
-        // Handle movement
+        // Manejo del movimiento
         if (!girando)
         {
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
-                enMovimiento = true;
+                if (!enMovimiento)
+                {
+                    instanciaMovimientoAdelante.start();  // Iniciar sonido de movimiento adelante
+                    enMovimiento = true;
+                }
                 AplicarFuerza(transform.forward);
             }
             else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             {
-                enMovimiento = true;
+                if (!enMovimiento)
+                {
+                    instanciaMovimientoAtras.start();  // Iniciar sonido de movimiento atrás
+                    enMovimiento = true;
+                }
                 AplicarFuerza(-transform.forward);
             }
             else
             {
-                enMovimiento = false;
+                if (enMovimiento)
+                {
+                    instanciaMovimientoAdelante.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);  // Detener sonido adelante
+                    instanciaMovimientoAtras.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);  // Detener sonido atrás
+                    enMovimiento = false;
+                }
                 DetenerMovimiento();
             }
         }
 
-        // Handle rotation
+        // Manejo de la rotación
         if (!enMovimiento)
         {
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
+                instanciaGiroIzquierda.start();  // Iniciar sonido de giro a la izquierda
                 Girar(-90f);
             }
             else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
+                instanciaGiroDerecha.start();  // Iniciar sonido de giro a la derecha
                 Girar(90f);
             }
         }
@@ -51,7 +88,7 @@ public class Movimiento : MonoBehaviour
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.AddForce(direccion * fuerzaMovimiento);
-        if (rb.velocity.magnitude > maxVelocidad)  // Limit speed
+        if (rb.velocity.magnitude > maxVelocidad)
         {
             rb.velocity = rb.velocity.normalized * maxVelocidad;
         }
@@ -64,7 +101,7 @@ public class Movimiento : MonoBehaviour
 
     void Girar(float angulo)
     {
-        if (!enMovimiento)  // Only rotate if not moving
+        if (!enMovimiento)
         {
             StartCoroutine(EjecutarGiro(angulo));
         }
@@ -87,5 +124,14 @@ public class Movimiento : MonoBehaviour
 
         transform.rotation = objetivoRotacion;
         girando = false;
+        // Detener el sonido de giro adecuado
+        if (angulo > 0)
+        {
+            instanciaGiroDerecha.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        }
+        else
+        {
+            instanciaGiroIzquierda.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        }
     }
 }

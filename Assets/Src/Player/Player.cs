@@ -14,39 +14,39 @@ public class Player : MonoBehaviour
     public float oxygenLossPerSecond = 1.0f;
     public bool oxygenLossActivated = false;
 
-    [FMODUnity.EventRef]
-    public string oxygenRefillEvent;
+    [SerializeField]
+    public EventReference oxygenRefillEvent;
 
-    [FMODUnity.EventRef]
-    public string deathEvent;
+    [SerializeField]
+    public EventReference deathEvent;
+    private bool deathEventPlayed = false;
 
-    [FMODUnity.EventRef]
-    public string breathingEvent;
+    [SerializeField]
+    public EventReference breathingEvent;
     private FMOD.Studio.EventInstance breathingInstance;
 
-    [FMODUnity.EventRef]
-    public string rapidBreathingEvent;
+    [SerializeField]
+    public EventReference rapidBreathingEvent;
     private FMOD.Studio.EventInstance rapidBreathingInstance;
 
     public int actualOxygenLevelWarning = START_OXYGEN_LEVEL;
 
-    [FMODUnity.EventRef]
-    public string highOxygenWarning;
+    [SerializeField]
+    public EventReference highOxygenWarning;
 
-    [FMODUnity.EventRef]
-    public string halfOxygenWarning;
+    [SerializeField]
+    public EventReference halfOxygenWarning;
 
-    [FMODUnity.EventRef]
-    public string lowOxygenWarning;
+    [SerializeField]
+    public EventReference lowOxygenWarning;
 
-  // Start is called before the first frame update
-  void Start()
+    void Start()
     {
-      breathingInstance = RuntimeManager.CreateInstance(breathingEvent);
-      rapidBreathingInstance = RuntimeManager.CreateInstance(rapidBreathingEvent);
+        breathingInstance = RuntimeManager.CreateInstance(breathingEvent);
+        rapidBreathingInstance = RuntimeManager.CreateInstance(rapidBreathingEvent);
+        Debug.Log("Breathing and Rapid Breathing Instances created.");
     }
 
-    // Update is called once per frame
     void Update()
     {
         ConsumeOxygen();
@@ -54,78 +54,85 @@ public class Player : MonoBehaviour
 
     private void OnDestroy()
     {
-      breathingInstance.release();
-      rapidBreathingInstance.release();
+        breathingInstance.release();
+        rapidBreathingInstance.release();
+        Debug.Log("Breathing Instances released.");
     }
 
-  public void ActivateOxygenConsumption()
+    public void ActivateOxygenConsumption()
     {
-      oxygenLossActivated = true;
+        oxygenLossActivated = true;
     }
 
     public void ConsumeOxygen()
     {
-      if (oxygenLossActivated != true)
-      {
-        return;
-      }
+        if (!oxygenLossActivated)
+            return;
 
-      oxygen -= oxygenLossPerSecond * Time.deltaTime;
-      ManageBreathingEvents();
-      PlayOxygenWarning();
-
-      CheckIfDead();
+        oxygen -= oxygenLossPerSecond * Time.deltaTime;
+        oxygen = Mathf.Max(oxygen, 0);
+        ManageBreathingEvents();
+        PlayOxygenWarning();
+        CheckIfDead();
     }
 
     public void RefillOxygen(float quantity)
     {
-      oxygen += quantity;
-      if (oxygen > 100)
-      {
-        oxygen = 100;
-      }
-
-      RuntimeManager.PlayOneShot(oxygenRefillEvent, transform.position);
+        oxygen += quantity;
+        oxygen = Mathf.Min(oxygen, 100);
+        RuntimeManager.PlayOneShot(oxygenRefillEvent, transform.position);
     }
 
     private void CheckIfDead()
     {
-      if (oxygen <= 0)
-      {
-        RuntimeManager.PlayOneShot(deathEvent, transform.position);
-        GameController.Instance.GameOver();
-      } 
+        if (oxygen <= 0 && !deathEventPlayed)
+        {
+            RuntimeManager.PlayOneShot(deathEvent, transform.position);
+            deathEventPlayed = true;
+            GameController.Instance.GameOver();
+        }
     }
 
     private void ManageBreathingEvents()
     {
-      if (oxygen >= 20 && !breathingInstance.isValid()) {
-        rapidBreathingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        breathingInstance.start();
-      } else if (oxygen < 20 && !rapidBreathingInstance.isValid()) {
-        breathingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        rapidBreathingInstance.start();
-      }
+        if (oxygen > 20)
+        {
+            if (!breathingInstance.isValid())
+            {
+                breathingInstance = RuntimeManager.CreateInstance(breathingEvent);
+            }
+            rapidBreathingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            breathingInstance.start();
+        }
+        else
+        {
+            if (!rapidBreathingInstance.isValid())
+            {
+                rapidBreathingInstance = RuntimeManager.CreateInstance(rapidBreathingEvent);
+            }
+            breathingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            rapidBreathingInstance.start();
+        }
     }
 
     private void PlayOxygenWarning()
     {
-      if (oxygen <= 80 && oxygen > 50 && actualOxygenLevelWarning != HIGH_OXYGEN_LEVEL)
-      {
-        actualOxygenLevelWarning = HIGH_OXYGEN_LEVEL;
-        RuntimeManager.PlayOneShot(highOxygenWarning, transform.position);
-      }
+        if (oxygen <= 80 && oxygen > 50 && actualOxygenLevelWarning != HIGH_OXYGEN_LEVEL)
+        {
+            actualOxygenLevelWarning = HIGH_OXYGEN_LEVEL;
+            RuntimeManager.PlayOneShot(highOxygenWarning, transform.position);
+        }
 
-      if (oxygen <= 50 && oxygen > 20 && actualOxygenLevelWarning != HALF_OXYGEN_LEVEL)
-      {
-        actualOxygenLevelWarning = HALF_OXYGEN_LEVEL;
-        RuntimeManager.PlayOneShot(halfOxygenWarning, transform.position);
-      }
+        if (oxygen <= 50 && oxygen > 20 && actualOxygenLevelWarning != HALF_OXYGEN_LEVEL)
+        {
+            actualOxygenLevelWarning = HALF_OXYGEN_LEVEL;
+            RuntimeManager.PlayOneShot(halfOxygenWarning, transform.position);
+        }
 
-      if (oxygen <= 20 && actualOxygenLevelWarning != LOW_OXYGEN_LEVEL)
-      {
-        actualOxygenLevelWarning = LOW_OXYGEN_LEVEL;
-        RuntimeManager.PlayOneShot(lowOxygenWarning, transform.position);
-      }
+        if (oxygen <= 20 && actualOxygenLevelWarning != LOW_OXYGEN_LEVEL)
+        {
+            actualOxygenLevelWarning = LOW_OXYGEN_LEVEL;
+            RuntimeManager.PlayOneShot(lowOxygenWarning, transform.position);
+        }
     }
 }

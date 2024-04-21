@@ -463,8 +463,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../../Documents/FMOD Studio/projects/StudentJam24/studentJam24/studentJam24.fspro
-  sourceBankPath: ../../../Documents/FMOD Studio/projects/StudentJam24/studentJam24/Build
+  sourceProjectPath: Assets/FMOD/StudentJam24/studentJam24/studentJam24.fspro
+  sourceBankPath: Assets/FMOD/StudentJam24/studentJam24/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -485,8 +485,10 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - Master
+  Banks:
+  - Bank A
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
@@ -499,7 +501,7 @@ MonoBehaviour:
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131617
-  HideSetupWizard: 0
+  HideSetupWizard: 1
   LastEventReferenceScanVersion: 131617
   Platforms:
   - {fileID: -8334537960455359642}

@@ -61,8 +61,8 @@ public class Structure : MonoBehaviour
     {
       if (isRepaired()) return false;
 
-      Player player = GameController.Instance.GetComponent<Player>();
-      if (player == null)
+        Player player = GameObject.Find("Player").GetComponent<Player>();
+        if (player == null)
       {
         Debug.LogError("Player is null chicos a ver");
         return false;
