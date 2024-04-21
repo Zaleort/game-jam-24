@@ -115,7 +115,7 @@ MonoBehaviour:
       Data2: 1170550168
       Data3: -1390011502
       Data4: -1970063816
-    Path: event:/Player/Breath/Breath
+    Path: event:/Player/Breath/BreathHighOxy
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -284,6 +284,7 @@ MonoBehaviour:
   fuerzaMovimiento: 10
   fuerzaGiro: 100
   tiempoGiro: 0.2
+  maxVelocidad: 5
 --- !u!20 &1871309830966169810
 Camera:
   m_ObjectHideFlags: 0
