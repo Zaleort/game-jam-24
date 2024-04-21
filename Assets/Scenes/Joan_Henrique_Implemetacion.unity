@@ -1004,6 +1004,7 @@ GameObject:
   - component: {fileID: 2114510567}
   - component: {fileID: 2114510566}
   - component: {fileID: 2114510565}
+  - component: {fileID: 2114510569}
   m_Layer: 0
   m_Name: BalizaJoan
   m_TagString: Untagged
@@ -1042,6 +1043,21 @@ MonoBehaviour:
   reparedLevel: 0
   repairIncrement: 10
   isRepaired: 0
+  repairInterval: 1000
+  repairSoundEvent:
+    Guid:
+      Data1: -1491484430
+      Data2: 1079237212
+      Data3: 424365964
+      Data4: 93103013
+    Path: event:/Reparing
+  repairedSoundEvent:
+    Guid:
+      Data1: -1505434
+      Data2: 1321093248
+      Data3: 805187200
+      Data4: -303499623
+    Path: event:/Repared
 --- !u!65 &2114510566
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1113,6 +1129,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114510563}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2114510569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114510563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
