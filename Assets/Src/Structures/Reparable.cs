@@ -13,28 +13,36 @@ public class Repairable : MonoBehaviour
     private float lastSpaceTime = -1f;
 
     [SerializeField]
-    [EventRef]
-    public EventReference repairSoundEvent;  // Evento de sonido para reparación
+    public EventReference repairSoundEvent;
     [SerializeField]
-    [EventRef]
-    public EventReference repairedSoundEvent;  // Evento de sonido cuando la reparación está completa
+    public EventReference repairedSoundEvent;
+    [SerializeField]
+    public EventReference reparableNoticeEvent;
+
+    public GameObject soundToDeactivate;  // Objeto que será desactivado cuando se repare
+    public GameObject soundToActivate;    // Objeto que será activado cuando se repare
+    public GameObject balizaToDeactivate;  // Objeto que será desactivado cuando se repare
+    public GameObject balizaToActivate;    // Objeto que será activado cuando se repare
 
     private FMOD.Studio.EventInstance repairSoundInstance;
-    private FMOD.Studio.EventInstance repairedSoundInstance;  // Instancia para el sonido de objeto reparado
+    private FMOD.Studio.EventInstance repairedSoundInstance;
+    private FMOD.Studio.EventInstance reparableNoticeInstance;
 
     private bool isSoundPlaying = false;
 
     private void Start()
     {
         repairSoundInstance = RuntimeManager.CreateInstance(repairSoundEvent.Guid);
-        repairedSoundInstance = RuntimeManager.CreateInstance(repairedSoundEvent.Guid);  // Crear instancia del nuevo evento
+        repairedSoundInstance = RuntimeManager.CreateInstance(repairedSoundEvent.Guid);
+        reparableNoticeInstance = RuntimeManager.CreateInstance(reparableNoticeEvent.Guid);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !isRepaired)
         {
             canRepare = true;
+            reparableNoticeInstance.start();
         }
     }
 
@@ -49,7 +57,7 @@ public class Repairable : MonoBehaviour
 
     private void Update()
     {
-        if (canRepare && !isRepaired)  // Añadido !isRepaired para evitar acciones si el objeto ya está reparado
+        if (canRepare && !isRepaired)
         {
             if (Input.GetKey(KeyCode.Space))
             {
@@ -105,15 +113,24 @@ public class Repairable : MonoBehaviour
         {
             reparedLevel = 100;
             isRepaired = true;
-            StopRepairSound();  // Detener el sonido de reparación
-            repairedSoundInstance.start();  // Iniciar el sonido de objeto reparado
+            StopRepairSound();
+            repairedSoundInstance.start();  // Reproducir el sonido de objeto reparado
             Debug.Log("Objeto reparado completamente!");
+            if (soundToDeactivate != null)
+                soundToDeactivate.SetActive(false);  // Desactivar el objeto seleccionado
+            if (soundToActivate != null)
+                soundToActivate.SetActive(true);     // Activar el otro objeto seleccionado
+            if (balizaToActivate != null)
+                balizaToActivate.SetActive(true);    // Comprobación de null para evitar errores
+            if (balizaToDeactivate != null)
+                balizaToDeactivate.SetActive(false); // Comprobación de null para evitar errores
         }
     }
 
     private void OnDestroy()
     {
         repairSoundInstance.release();
-        repairedSoundInstance.release();  // Liberar la instancia del nuevo evento de sonido
+        repairedSoundInstance.release();
+        reparableNoticeInstance.release();
     }
 }

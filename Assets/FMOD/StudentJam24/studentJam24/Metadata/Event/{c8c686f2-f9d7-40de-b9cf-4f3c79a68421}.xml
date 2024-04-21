@@ -97,6 +97,8 @@
 		<relationship name="effects">
 			<destination>{b3e45180-0a9b-4e3a-be24-5593ad9c2c4b}</destination>
 			<destination>{ec64c78b-28d4-4e78-9314-bfe1bddecd07}</destination>
+			<destination>{c42cc1b4-98e1-4dbe-9317-6dbf30eaac6e}</destination>
+			<destination>{285f5202-658f-4358-8997-d364251e6c4d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{0ca1cdda-f9ed-42a7-b318-28b47fb74618}" />
@@ -113,6 +115,16 @@
 		</property>
 		<property name="overridingOutputFormat">
 			<value>1</value>
+		</property>
+	</object>
+	<object class="HighpassEffect" id="{c42cc1b4-98e1-4dbe-9317-6dbf30eaac6e}">
+		<property name="cutoff">
+			<value>300</value>
+		</property>
+	</object>
+	<object class="LowpassEffect" id="{285f5202-658f-4358-8997-d364251e6c4d}">
+		<property name="cutoff">
+			<value>1650</value>
 		</property>
 	</object>
 </objects>

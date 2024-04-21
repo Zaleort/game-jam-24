@@ -96,6 +96,11 @@
 	<object class="MixerBusEffectChain" id="{a0b93910-ae1c-4904-bbbb-8a85a550379a}">
 		<relationship name="effects">
 			<destination>{c23472df-7406-4f54-8be1-cbde27c08f99}</destination>
+			<destination>{3a4d82ed-50f9-4922-9285-94a2ecc46e44}</destination>
+			<destination>{2e46b3d2-f8fe-4fe9-997d-047fd01c39dd}</destination>
+			<destination>{0c57afaa-81da-4644-aec0-9c6ce3ec0540}</destination>
+			<destination>{d2194822-6579-4aa3-9276-a4cc1843ffb5}</destination>
+			<destination>{c3b530fb-a166-4fc1-99a9-75ededf27584}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{22ef6055-75fb-48a5-afe9-36d17b0d6032}" />
@@ -106,4 +111,25 @@
 	</object>
 	<object class="MixerBusFader" id="{55d3aa8f-a14d-4599-ae73-9a05b501e6ae}" />
 	<object class="MixerBusFader" id="{c23472df-7406-4f54-8be1-cbde27c08f99}" />
+	<object class="FlangerEffect" id="{3a4d82ed-50f9-4922-9285-94a2ecc46e44}" />
+	<object class="LowpassEffect" id="{2e46b3d2-f8fe-4fe9-997d-047fd01c39dd}">
+		<property name="cutoff">
+			<value>3600</value>
+		</property>
+	</object>
+	<object class="HighpassEffect" id="{0c57afaa-81da-4644-aec0-9c6ce3ec0540}">
+		<property name="cutoff">
+			<value>300</value>
+		</property>
+	</object>
+	<object class="DistortionEffect" id="{d2194822-6579-4aa3-9276-a4cc1843ffb5}">
+		<property name="level">
+			<value>0.764999986</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{c3b530fb-a166-4fc1-99a9-75ededf27584}">
+		<property name="decayTime">
+			<value>190</value>
+		</property>
+	</object>
 </objects>

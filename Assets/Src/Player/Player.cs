@@ -5,46 +5,47 @@ using FMODUnity;
 
 public class Player : MonoBehaviour
 {
-    public static int START_OXYGEN_LEVEL = 0;
-    public static int HIGH_OXYGEN_LEVEL = 1;
-    public static int HALF_OXYGEN_LEVEL = 2;
-    public static int LOW_OXYGEN_LEVEL = 3;
+    private enum OxygenState { HIGH, MID, LOW }
+
+    // Define a structure to hold oxygen level thresholds and corresponding events
+    [System.Serializable]
+    public struct OxygenLevelWarning
+    {
+        public float level;
+        public EventReference warningEvent;
+    }
 
     public float oxygen = 100f;
     public float oxygenLossPerSecond = 1.0f;
     public bool oxygenLossActivated = false;
 
+    // Dynamic threshold values for HIGH, MID, and LOW states
+    [SerializeField] private float highThreshold = 75f;
+    [SerializeField] private float midThreshold = 15f;
+
+    [SerializeField]
+    public List<OxygenLevelWarning> oxygenWarnings; // List of variable oxygen warnings
+
     [SerializeField]
     public EventReference oxygenRefillEvent;
-
     [SerializeField]
     public EventReference deathEvent;
+
+    [SerializeField]
+    private EventReference highOxygenEvent; // FMOD event for HIGH oxygen level
+    [SerializeField]
+    private EventReference midOxygenEvent;  // FMOD event for MID oxygen level
+    [SerializeField]
+    private EventReference lowOxygenEvent;  // FMOD event for LOW oxygen level
+
+    private FMOD.Studio.EventInstance currentBreathingInstance;
+    private OxygenState currentState = OxygenState.HIGH;
     private bool deathEventPlayed = false;
-
-    [SerializeField]
-    public EventReference breathingEvent;
-    private FMOD.Studio.EventInstance breathingInstance;
-
-    [SerializeField]
-    public EventReference rapidBreathingEvent;
-    private FMOD.Studio.EventInstance rapidBreathingInstance;
-
-    public int actualOxygenLevelWarning = START_OXYGEN_LEVEL;
-
-    [SerializeField]
-    public EventReference highOxygenWarning;
-
-    [SerializeField]
-    public EventReference halfOxygenWarning;
-
-    [SerializeField]
-    public EventReference lowOxygenWarning;
+    private float lastOxygenLevel = 100f; // Track the last oxygen level that triggered a warning
 
     void Start()
     {
-        breathingInstance = RuntimeManager.CreateInstance(breathingEvent);
-        rapidBreathingInstance = RuntimeManager.CreateInstance(rapidBreathingEvent);
-        Debug.Log("Breathing and Rapid Breathing Instances created.");
+        SetInitialBreathingEvent();
     }
 
     void Update()
@@ -54,9 +55,8 @@ public class Player : MonoBehaviour
 
     private void OnDestroy()
     {
-        breathingInstance.release();
-        rapidBreathingInstance.release();
-        Debug.Log("Breathing Instances released.");
+        currentBreathingInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        currentBreathingInstance.release();
     }
 
     public void ActivateOxygenConsumption()
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
 
         oxygen -= oxygenLossPerSecond * Time.deltaTime;
         oxygen = Mathf.Max(oxygen, 0);
-        ManageBreathingEvents();
+        UpdateBreathingEvent();
         PlayOxygenWarning();
         CheckIfDead();
     }
@@ -87,52 +87,72 @@ public class Player : MonoBehaviour
     {
         if (oxygen <= 0 && !deathEventPlayed)
         {
+            // Immediately stop the low oxygen sound if it is playing
+            if (currentState == OxygenState.LOW)
+            {
+                currentBreathingInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            }
+
             RuntimeManager.PlayOneShot(deathEvent, transform.position);
             deathEventPlayed = true;
             GameController.Instance.GameOver();
         }
     }
 
-    private void ManageBreathingEvents()
+    private void SetInitialBreathingEvent()
     {
-        if (oxygen > 20)
+        currentBreathingInstance = RuntimeManager.CreateInstance(highOxygenEvent);
+        currentBreathingInstance.start();
+    }
+
+    private void UpdateBreathingEvent()
+    {
+        OxygenState newState = DetermineOxygenState();
+        if (newState != currentState)
         {
-            if (!breathingInstance.isValid())
+            // Stop the current event
+            currentBreathingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            currentBreathingInstance.release();
+
+            // Start the new appropriate event based on the current oxygen state
+            switch (newState)
             {
-                breathingInstance = RuntimeManager.CreateInstance(breathingEvent);
+                case OxygenState.HIGH:
+                    currentBreathingInstance = RuntimeManager.CreateInstance(highOxygenEvent);
+                    break;
+                case OxygenState.MID:
+                    currentBreathingInstance = RuntimeManager.CreateInstance(midOxygenEvent);
+                    break;
+                case OxygenState.LOW:
+                    currentBreathingInstance = RuntimeManager.CreateInstance(lowOxygenEvent);
+                    break;
             }
-            rapidBreathingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            breathingInstance.start();
-        }
-        else
-        {
-            if (!rapidBreathingInstance.isValid())
-            {
-                rapidBreathingInstance = RuntimeManager.CreateInstance(rapidBreathingEvent);
-            }
-            breathingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            rapidBreathingInstance.start();
+            currentBreathingInstance.start();
+            currentState = newState;  // Update current state
         }
     }
 
     private void PlayOxygenWarning()
     {
-        if (oxygen <= 80 && oxygen > 50 && actualOxygenLevelWarning != HIGH_OXYGEN_LEVEL)
+        // Check against each defined warning level
+        foreach (var warning in oxygenWarnings)
         {
-            actualOxygenLevelWarning = HIGH_OXYGEN_LEVEL;
-            RuntimeManager.PlayOneShot(highOxygenWarning, transform.position);
+            if (oxygen <= warning.level && lastOxygenLevel > warning.level)
+            {
+                RuntimeManager.PlayOneShot(warning.warningEvent, transform.position);
+                lastOxygenLevel = warning.level; // Update last triggered level
+                break; // Only play the first matching warning
+            }
         }
+    }
 
-        if (oxygen <= 50 && oxygen > 20 && actualOxygenLevelWarning != HALF_OXYGEN_LEVEL)
-        {
-            actualOxygenLevelWarning = HALF_OXYGEN_LEVEL;
-            RuntimeManager.PlayOneShot(halfOxygenWarning, transform.position);
-        }
-
-        if (oxygen <= 20 && actualOxygenLevelWarning != LOW_OXYGEN_LEVEL)
-        {
-            actualOxygenLevelWarning = LOW_OXYGEN_LEVEL;
-            RuntimeManager.PlayOneShot(lowOxygenWarning, transform.position);
-        }
+    private OxygenState DetermineOxygenState()
+    {
+        if (oxygen > highThreshold)
+            return OxygenState.HIGH;
+        else if (oxygen > midThreshold)
+            return OxygenState.MID;
+        else
+            return OxygenState.LOW;
     }
 }

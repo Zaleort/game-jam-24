@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8878204571989308363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Oxigeno50
+  m_EditorClassIdentifier: 
+  Path: event:/Oxigeno50
+  Guid:
+    Data1: 830030140
+    Data2: 1099455162
+    Data3: -278367577
+    Data4: -1758534929
+  Banks:
+  - {fileID: -4380124260814938916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2768
 --- !u!114 &-8456026039676394068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,6 +54,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7439
+--- !u!114 &-5987283497170993458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OpenDoor
+  m_EditorClassIdentifier: 
+  Path: event:/OpenDoor
+  Guid:
+    Data1: -415883132
+    Data2: 1160252096
+    Data3: -1519327608
+    Data4: 1974738863
+  Banks:
+  - {fileID: -4380124260814938916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3042
 --- !u!114 &-5875658490754764819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,6 +101,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 170912
   Exists: 1
+--- !u!114 &-5692704921885651501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meteorito 2
+  m_EditorClassIdentifier: 
+  Path: event:/Meteorito 2
+  Guid:
+    Data1: -789425563
+    Data2: 1103685845
+    Data3: -1199018577
+    Data4: 1625010534
+  Banks:
+  - {fileID: -4380124260814938916}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11075
 --- !u!114 &-5028933257993541087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,11 +170,38 @@ MonoBehaviour:
   Path: Assets/FMOD/StudentJam24/studentJam24/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638493004102954987
+  lastModified: 638493232507340054
   FileSizes:
   - Name: Desktop
-    Value: 1014560
+    Value: 1427840
   Exists: 1
+--- !u!114 &-4085907543220282702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OxigenoCritico
+  m_EditorClassIdentifier: 
+  Path: event:/OxigenoCritico
+  Guid:
+    Data1: -495096871
+    Data2: 1301155458
+    Data3: 1177437108
+    Data4: -511178843
+  Banks:
+  - {fileID: -4380124260814938916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1933
 --- !u!114 &-3691868692761331653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +310,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 11075
+--- !u!114 &-1588430103465815010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Oxigeno75
+  m_EditorClassIdentifier: 
+  Path: event:/Oxigeno75
+  Guid:
+    Data1: -180752933
+    Data2: 1341537005
+    Data3: -168880705
+    Data4: -53304391
+  Banks:
+  - {fileID: -4380124260814938916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3056
 --- !u!114 &-1490046628470377218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +418,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-286587019077195179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Respiro/RespiroNormal
+  m_EditorClassIdentifier: 
+  Path: event:/Respiro/RespiroNormal
+  Guid:
+    Data1: 1948476110
+    Data2: 1174245918
+    Data3: 1769707929
+    Data4: -277301863
+  Banks:
+  - {fileID: -4380124260814938916}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11206
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,13 +482,53 @@ MonoBehaviour:
   - {fileID: -3510005746492406767}
   - {fileID: -1490046628470377218}
   - {fileID: 7565745483119609758}
+  - {fileID: -5692704921885651501}
+  - {fileID: 7106771892378218879}
+  - {fileID: 2736602333979006829}
+  - {fileID: 2332388715770797622}
+  - {fileID: 1378418856881718256}
+  - {fileID: -286587019077195179}
+  - {fileID: 6870164357248187337}
+  - {fileID: -8878204571989308363}
+  - {fileID: 6663658079403927038}
+  - {fileID: -4085907543220282702}
+  - {fileID: -1588430103465815010}
+  - {fileID: 5944792127743490498}
+  - {fileID: -5987283497170993458}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4380124260814938916}
   StringsBanks:
   - {fileID: 6257823701904196731}
-  cacheTime: 638493004102986681
+  cacheTime: 638493232507390484
   cacheVersion: 131617
+--- !u!114 &1378418856881718256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Respiro/RespiroBajo
+  m_EditorClassIdentifier: 
+  Path: event:/Respiro/RespiroBajo
+  Guid:
+    Data1: -1446525060
+    Data2: 1156724245
+    Data3: 608012932
+    Data4: 580366312
+  Banks:
+  - {fileID: -4380124260814938916}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11075
 --- !u!114 &1960097317697120355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,7 +551,7 @@ MonoBehaviour:
   - {fileID: -4380124260814938916}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -381,6 +583,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2332388715770797622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Respiro/RespiroMedio
+  m_EditorClassIdentifier: 
+  Path: event:/Respiro/RespiroMedio
+  Guid:
+    Data1: 1786122310
+    Data2: 1319127439
+    Data3: 862863292
+    Data4: -1789034055
+  Banks:
+  - {fileID: -4380124260814938916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7439
+--- !u!114 &2736602333979006829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BalizaReparada
+  m_EditorClassIdentifier: 
+  Path: event:/BalizaReparada
+  Guid:
+    Data1: 166163591
+    Data2: 1251559062
+    Data3: 843975081
+    Data4: 825196390
+  Banks:
+  - {fileID: -4380124260814938916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1488
 --- !u!114 &5380560604928918046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,6 +691,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5944792127743490498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Oxigeno10
+  m_EditorClassIdentifier: 
+  Path: event:/Oxigeno10
+  Guid:
+    Data1: -91873418
+    Data2: 1081966513
+    Data3: -931136353
+    Data4: -1009875174
+  Banks:
+  - {fileID: -4380124260814938916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2455
 --- !u!114 &6008862911756194379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,11 +760,38 @@ MonoBehaviour:
   Path: Assets/FMOD/StudentJam24/studentJam24/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638493004102986681
+  lastModified: 638493232507390484
   FileSizes:
   - Name: Desktop
-    Value: 1682
+    Value: 2230
   Exists: 1
+--- !u!114 &6663658079403927038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Oxigeno25
+  m_EditorClassIdentifier: 
+  Path: event:/Oxigeno25
+  Guid:
+    Data1: 533982621
+    Data2: 1190944595
+    Data3: 1210756016
+    Data4: -523047392
+  Banks:
+  - {fileID: -4380124260814938916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2638
 --- !u!114 &6732458401466698697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,6 +846,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &6870164357248187337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Oxigeno100
+  m_EditorClassIdentifier: 
+  Path: event:/Oxigeno100
+  Guid:
+    Data1: -2138141388
+    Data2: 1320322741
+    Data3: -1047945598
+    Data4: -1394109419
+  Banks:
+  - {fileID: -4380124260814938916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2586
+--- !u!114 &7106771892378218879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BalizaReparable
+  m_EditorClassIdentifier: 
+  Path: event:/BalizaReparable
+  Guid:
+    Data1: 1675617282
+    Data2: 1107892738
+    Data3: -989216613
+    Data4: -1269530045
+  Banks:
+  - {fileID: -4380124260814938916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4205
 --- !u!114 &7269083267472406016
 MonoBehaviour:
   m_ObjectHideFlags: 0
