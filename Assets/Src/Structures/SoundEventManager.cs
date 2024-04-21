@@ -1,30 +1,34 @@
 using UnityEngine;
 using FMODUnity;
+using FMOD.Studio;
+using System; // Make sure you have this for IntPtr
+using System.Runtime.InteropServices; // Necessary for handling pointers if needed
+using System.Collections.Generic;
+using System.Collections;
 
 public class SoundEventManager : MonoBehaviour
 {
-    [EventRef]
-    public string[] soundEvents; // Aquí puedes asignar los eventos de sonido desde el Inspector
+    [SerializeField] private List<EventReference> eventReferences; // Lista de EventReferences
+    private int currentIndex = 0;
 
-    private FMOD.Studio.EventInstance[] eventInstances;
-    private int currentEventIndex = 0;
-
-    void Start()
+    private void Start()
     {
-        eventInstances = new FMOD.Studio.EventInstance[soundEvents.Length];
-        for (int i = 0; i < soundEvents.Length; i++)
-        {
-            eventInstances[i] = FMODUnity.RuntimeManager.CreateInstance(soundEvents[i]);
-        }
-        PlayNextSound();
+        StartCoroutine(PlaySequentialEvents());
     }
 
-    void PlayNextSound()
+    private IEnumerator PlaySequentialEvents()
     {
-        if (currentEventIndex < soundEvents.Length)
+        foreach (var eventRef in eventReferences)
         {
-            eventInstances[currentEventIndex].start();
-            currentEventIndex++;
+            EventInstance eventInstance = RuntimeManager.CreateInstance(eventRef); // Crea una instancia del evento
+            eventInstance.start(); // Comienza a reproducir el evento
+            eventInstance.release(); // Libera la instancia una vez que comienza a reproducir
+
+            yield return new WaitUntil(() => {
+                PLAYBACK_STATE pbState;
+                eventInstance.getPlaybackState(out pbState);
+                return pbState == PLAYBACK_STATE.STOPPED; // Espera hasta que el evento se haya detenido
+            });
         }
     }
 }

@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 909410443}
   - component: {fileID: 909410442}
   - component: {fileID: 909410441}
-  - component: {fileID: 909410440}
+  - component: {fileID: 909410445}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -240,20 +240,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &909410440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909410439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c366eecfac41b5478e32737fc7b0b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundEvents:
-  - 
 --- !u!65 &909410441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -340,6 +326,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &909410445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909410439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc79636955147644b850e9953e6cc22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventReferences:
+  - Guid:
+      Data1: 733977838
+      Data2: 1233804121
+      Data3: -1196936554
+      Data4: -1336925217
+    Path: event:/Oxigeno/Alto
+  - Guid:
+      Data1: -752609138
+      Data2: 1107316405
+      Data3: 707718281
+      Data4: 1455332471
+    Path: event:/Oxigeno/Medio
+  - Guid:
+      Data1: 1213774514
+      Data2: 1076158324
+      Data3: -1419593852
+      Data4: 350628139
+    Path: event:/Oxigeno/Bajo
 --- !u!1 &1550412899
 GameObject:
   m_ObjectHideFlags: 0
