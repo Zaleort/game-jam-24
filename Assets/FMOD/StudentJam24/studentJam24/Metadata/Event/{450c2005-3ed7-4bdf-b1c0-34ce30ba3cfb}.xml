@@ -43,6 +43,7 @@
 	<object class="MasterTrack" id="{59b442d6-f84c-49b6-b3ff-3ab18fb57db2}">
 		<relationship name="modules">
 			<destination>{558ce4e7-ccd6-40a9-bf1d-9c15a3f4378c}</destination>
+			<destination>{5fa88a30-85ca-4c81-a565-1e72a3dd8020}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{ecd81d63-7a77-4dc1-af3e-cbcabd343943}</destination>
@@ -62,9 +63,9 @@
 	<object class="EventAutomatableProperties" id="{ebff04d0-221b-4bf0-b8a7-3b2ab25879c2}" />
 	<object class="MarkerTrack" id="{1818b2b2-9114-4195-85be-b07ecef21b42}" />
 	<object class="Timeline" id="{d434c60a-7561-4c53-b2cd-52bc7ed3aa31}">
-		<property name="isProxyEnabled">
-			<value>false</value>
-		</property>
+		<relationship name="modules">
+			<destination>{5fa88a30-85ca-4c81-a565-1e72a3dd8020}</destination>
+		</relationship>
 	</object>
 	<object class="ActionSheet" id="{a76c6090-6a4d-4ef0-9d33-73395620b415}">
 		<relationship name="modules">
@@ -84,7 +85,15 @@
 	</object>
 	<object class="MultiSound" id="{558ce4e7-ccd6-40a9-bf1d-9c15a3f4378c}">
 		<relationship name="sounds">
-			<destination>{76b366d7-8dc6-4178-8ecb-55a1fbd49b68}</destination>
+			<destination>{bbc935a7-9448-4e41-bb6a-e1a4a5bc1e2c}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{5fa88a30-85ca-4c81-a565-1e72a3dd8020}">
+		<property name="length">
+			<value>1.4681179138321996</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{066c1fd5-21d4-4d59-973e-729f850e30e0}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{519ac811-1084-45d8-9b8e-0d262f630a3f}">
@@ -102,7 +111,7 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{221452f1-285e-40a2-9ea1-d122f2e34335}" />
-	<object class="SingleSound" id="{76b366d7-8dc6-4178-8ecb-55a1fbd49b68}">
+	<object class="SingleSound" id="{bbc935a7-9448-4e41-bb6a-e1a4a5bc1e2c}">
 		<relationship name="audioFile">
 			<destination>{6ce59d45-5715-4d0b-8ff0-24edcdb30551}</destination>
 		</relationship>

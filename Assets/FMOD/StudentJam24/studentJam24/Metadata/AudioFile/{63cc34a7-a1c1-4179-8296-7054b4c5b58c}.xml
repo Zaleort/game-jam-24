@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{63cc34a7-a1c1-4179-8296-7054b4c5b58c}">
+		<property name="assetPath">
+			<value>Inside Spaceship.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>37.746938775510202</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{049e32d2-ea6e-4dd0-9e34-6933250b68c3}</destination>
+		</relationship>
+	</object>
+</objects>

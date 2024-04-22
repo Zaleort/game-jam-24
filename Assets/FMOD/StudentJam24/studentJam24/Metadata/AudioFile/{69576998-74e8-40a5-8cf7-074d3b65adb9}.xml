@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{69576998-74e8-40a5-8cf7-074d3b65adb9}">
+		<property name="assetPath">
+			<value>Menu/GraciasPorJugar.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.0710204081632653</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{049e32d2-ea6e-4dd0-9e34-6933250b68c3}</destination>
+		</relationship>
+	</object>
+</objects>

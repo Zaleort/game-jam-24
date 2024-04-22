@@ -30,6 +30,34 @@ public class Repairable : MonoBehaviour
 
     private bool isSoundPlaying = false;
 
+    private void OnEnable()
+    {
+     
+
+        if (gameObject.CompareTag("Nave"))
+        {
+            canRepare = false;
+            reparedLevel = 0;
+            repairIncrement = 25;
+            isRepaired = false;
+            repairInterval = 1000f;
+            repairTimer = 0;
+            spaceCooldown = 0.5f;
+            lastSpaceTime = -1f;
+        }
+        else {
+            canRepare = false;
+            reparedLevel = 0;
+            repairIncrement = 10;
+            isRepaired = false;
+            repairInterval = 1000f;
+            repairTimer = 0;
+            spaceCooldown = 0.5f;
+            lastSpaceTime = -1f;
+        }
+    }
+
+
     private void Start()
     {
         repairSoundInstance = RuntimeManager.CreateInstance(repairSoundEvent.Guid);
@@ -116,8 +144,16 @@ public class Repairable : MonoBehaviour
             StopRepairSound();
             repairedSoundInstance.start();  // Reproducir el sonido de objeto reparado
             Debug.Log("Objeto reparado completamente!");
-            if (soundToDeactivate != null)
+            if (soundToDeactivate != null) {
+                
+                if (this.gameObject.CompareTag("Nave"))
+                {
+                    StopAllFMODSounds();
+                }
                 soundToDeactivate.SetActive(false);  // Desactivar el objeto seleccionado
+            }
+            
+
             if (soundToActivate != null)
                 soundToActivate.SetActive(true);     // Activar el otro objeto seleccionado
             if (balizaToActivate != null)
@@ -125,6 +161,12 @@ public class Repairable : MonoBehaviour
             if (balizaToDeactivate != null)
                 balizaToDeactivate.SetActive(false); // Comprobación de null para evitar errores
         }
+    }
+    void StopAllFMODSounds()
+    {
+        // Detiene todos los eventos de FMOD que están actualmente reproduciéndose
+        FMOD.Studio.Bus masterBus = RuntimeManager.GetBus("bus:/"); // Obtén el bus maestro
+        masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); // Detiene todos los eventos en el bus maestro con un fade out
     }
 
     private void OnDestroy()
