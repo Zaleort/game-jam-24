@@ -39,7 +39,7 @@
 	</object>
 	<object class="MasterTrack" id="{cfb71f89-e817-4e76-83fd-f408b58ecffb}">
 		<relationship name="modules">
-			<destination>{cc0a9afb-a1bc-44e4-bd80-6829d169cade}</destination>
+			<destination>{7b851fb9-f135-49e4-9fb1-d37f22c6b97f}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{423af5f8-62a2-4f0a-9271-9afde393ff9e}</destination>
@@ -60,7 +60,7 @@
 	<object class="MarkerTrack" id="{9e120513-d2d4-45ea-859a-1d4326668a5d}" />
 	<object class="Timeline" id="{5e6ec9ed-c4fc-4768-879f-a2f7e8be4253}">
 		<relationship name="modules">
-			<destination>{cc0a9afb-a1bc-44e4-bd80-6829d169cade}</destination>
+			<destination>{7b851fb9-f135-49e4-9fb1-d37f22c6b97f}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{423af5f8-62a2-4f0a-9271-9afde393ff9e}">
@@ -74,12 +74,12 @@
 			<destination>{3b913d61-79be-4f2c-97b4-7e6f9ec7088c}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{cc0a9afb-a1bc-44e4-bd80-6829d169cade}">
+	<object class="SingleSound" id="{7b851fb9-f135-49e4-9fb1-d37f22c6b97f}">
 		<property name="length">
-			<value>10.866938775510205</value>
+			<value>3.0040816326530613</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{53da0584-ed0f-417c-a0d7-c3ef0c11ac23}</destination>
+			<destination>{df29e99e-eff3-475b-859d-98abf233455a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{d59aba79-b0dd-47aa-8c9c-ff62227a22e5}">
@@ -96,9 +96,16 @@
 			<destination>{b9571890-633b-4fa1-ad5a-6b5c072ed9d6}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{1c0a5f03-346c-49ef-9711-b344771012a0}" />
+	<object class="MixerBusPanner" id="{1c0a5f03-346c-49ef-9711-b344771012a0}">
+		<property name="stereoPan">
+			<value>100</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{4ece0542-1e6c-4305-9914-98357098425e}" />
 	<object class="PannerEffect" id="{9e5b2eaa-0634-40bc-a13a-190f6c353f27}">
+		<property name="stereoPan">
+			<value>100</value>
+		</property>
 		<property name="overridingOutputFormat">
 			<value>1</value>
 		</property>

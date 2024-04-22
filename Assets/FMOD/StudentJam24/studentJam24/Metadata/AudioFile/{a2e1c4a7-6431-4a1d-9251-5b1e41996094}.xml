@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{a2e1c4a7-6431-4a1d-9251-5b1e41996094}">
+		<property name="assetPath">
+			<value>ElevenLabs_2024-04-22T16 38 59_Oliver - Podcasting_pvc_s42_sb60_se0_b_m2.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>2.9257142857142857</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{049e32d2-ea6e-4dd0-9e34-6933250b68c3}</destination>
+		</relationship>
+	</object>
+</objects>

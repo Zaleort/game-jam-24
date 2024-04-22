@@ -170,10 +170,10 @@ MonoBehaviour:
   Path: Assets/FMOD/StudentJam24/studentJam24/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638494071263203044
+  lastModified: 638494089844072261
   FileSizes:
   - Name: Desktop
-    Value: 3611360
+    Value: 3389152
   Exists: 1
 --- !u!114 &-4085907543220282702
 MonoBehaviour:
@@ -685,13 +685,11 @@ MonoBehaviour:
   - {fileID: 2203347967052278042}
   - {fileID: 1435915836765750192}
   - {fileID: -4596891698593894039}
-  - {fileID: 2673428568982026577}
   - {fileID: 8631050061287045783}
   - {fileID: -538550013724398680}
   - {fileID: 2375222051545809711}
   - {fileID: 6965692907058278446}
   - {fileID: 843026034923088067}
-  - {fileID: 8840232410330202861}
   - {fileID: 4003234011817868084}
   - {fileID: 3217624993767237348}
   - {fileID: -674134229679021199}
@@ -707,12 +705,13 @@ MonoBehaviour:
   - {fileID: 5570632544231458302}
   - {fileID: -3473397042607019234}
   - {fileID: 2654546351163362762}
+  - {fileID: 4600118533206904751}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4380124260814938916}
   StringsBanks:
   - {fileID: 6257823701904196731}
-  cacheTime: 638494071263275460
+  cacheTime: 638494089844155238
   cacheVersion: 131617
 --- !u!114 &667831928141992329
 MonoBehaviour:
@@ -788,13 +787,13 @@ MonoBehaviour:
     Data4: -75143217
   Banks:
   - {fileID: -4380124260814938916}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 10866
+  Length: 3004
 --- !u!114 &1264898269182157110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1092,33 +1091,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7381
---- !u!114 &2673428568982026577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/INTRODUCTION/Narracion/5
-  m_EditorClassIdentifier: 
-  Path: event:/INTRODUCTION/Narracion/5
-  Guid:
-    Data1: -1862168008
-    Data2: 1251254404
-    Data3: -1977494134
-    Data4: 651399825
-  Banks:
-  - {fileID: -4380124260814938916}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 5198
 --- !u!114 &3217624993767237348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1227,6 +1199,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7836
+--- !u!114 &4600118533206904751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Balizas/Reparacion/BalizaReparableNoEspacio
+  m_EditorClassIdentifier: 
+  Path: event:/Balizas/Reparacion/BalizaReparableNoEspacio
+  Guid:
+    Data1: -1134746143
+    Data2: 1228706465
+    Data3: -698611530
+    Data4: 387945230
+  Banks:
+  - {fileID: -4380124260814938916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1802
 --- !u!114 &5358775659266193548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1404,10 +1403,10 @@ MonoBehaviour:
   Path: Assets/FMOD/StudentJam24/studentJam24/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638494071263275460
+  lastModified: 638494089844155238
   FileSizes:
   - Name: Desktop
-    Value: 3308
+    Value: 3294
   Exists: 1
 --- !u!114 &6732458401466698697
 MonoBehaviour:
@@ -1462,7 +1461,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 3604
+  Length: 2650
 --- !u!114 &7269083267472406016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1618,37 +1617,10 @@ MonoBehaviour:
     Data4: 626169163
   Banks:
   - {fileID: -4380124260814938916}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2850
---- !u!114 &8840232410330202861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/INTRODUCTION/Narracion/6
-  m_EditorClassIdentifier: 
-  Path: event:/INTRODUCTION/Narracion/6
-  Guid:
-    Data1: -1408955918
-    Data2: 1113616040
-    Data3: 621311919
-    Data4: -1861207161
-  Banks:
-  - {fileID: -4380124260814938916}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2850
+  Length: 2324

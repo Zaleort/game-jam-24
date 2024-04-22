@@ -256,11 +256,11 @@ MonoBehaviour:
     Path: event:/ReparedFinal
   reparableNoticeEvent:
     Guid:
-      Data1: 1675617282
-      Data2: 1107892738
-      Data3: -989216613
-      Data4: -1269530045
-    Path: event:/BalizaReparable
+      Data1: -1134746143
+      Data2: 1228706465
+      Data3: -698611530
+      Data4: 387945230
+    Path: event:/Balizas/Reparacion/BalizaReparableNoEspacio
   soundToDeactivate: {fileID: 56787796}
   soundToActivate: {fileID: 1677345263}
   balizaToDeactivate: {fileID: 0}
@@ -2202,11 +2202,11 @@ MonoBehaviour:
     Path: event:/Repared
   reparableNoticeEvent:
     Guid:
-      Data1: 1675617282
-      Data2: 1107892738
-      Data3: -989216613
-      Data4: -1269530045
-    Path: event:/BalizaReparable
+      Data1: -1134746143
+      Data2: 1228706465
+      Data3: -698611530
+      Data4: 387945230
+    Path: event:/Balizas/Reparacion/BalizaReparableNoEspacio
   soundToDeactivate: {fileID: 1329639753}
   soundToActivate: {fileID: 2122605135}
   balizaToDeactivate: {fileID: 0}
@@ -3123,18 +3123,6 @@ MonoBehaviour:
       Data3: -2061936211
       Data4: 626169163
     Path: event:/INTRODUCTION/Narracion/4
-  - Guid:
-      Data1: -1862168008
-      Data2: 1251254404
-      Data3: -1977494134
-      Data4: 651399825
-    Path: event:/INTRODUCTION/Narracion/5
-  - Guid:
-      Data1: -1408955918
-      Data2: 1113616040
-      Data3: 621311919
-      Data4: -1861207161
-    Path: event:/INTRODUCTION/Narracion/6
   - Guid:
       Data1: 2006583914
       Data2: 1149228746
