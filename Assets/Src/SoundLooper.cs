@@ -7,6 +7,7 @@ public class SoundLooper : MonoBehaviour
 {
     public EventReference[] soundEvents; // Array de EventReferences de FMOD
     public float delayBetweenSounds = 0.1f; // Retardo adicional entre sonidos
+    public float initialDelay = 5.0f; // Retardo inicial antes de comenzar el bucle de sonidos
 
     private void Start()
     {
@@ -15,6 +16,9 @@ public class SoundLooper : MonoBehaviour
 
     IEnumerator PlaySoundsInLoop()
     {
+        // Espera un tiempo inicial antes de comenzar a reproducir los sonidos
+        yield return new WaitForSeconds(initialDelay);
+
         foreach (EventReference soundEvent in soundEvents)
         {
             EventInstance soundInstance = RuntimeManager.CreateInstance(soundEvent);

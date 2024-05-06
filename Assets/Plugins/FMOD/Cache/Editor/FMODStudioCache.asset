@@ -278,10 +278,10 @@ MonoBehaviour:
   Path: Assets/FMOD/StudentJam24/studentJam24/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638506235164986518
+  lastModified: 638506298252341446
   FileSizes:
   - Name: Desktop
-    Value: 4219136
+    Value: 4220224
   Exists: 1
 --- !u!114 &-4085907543220282702
 MonoBehaviour:
@@ -868,8 +868,6 @@ MonoBehaviour:
   - {fileID: -3473397042607019234}
   - {fileID: 2654546351163362762}
   - {fileID: 4600118533206904751}
-  - {fileID: 6936605827861175298}
-  - {fileID: 1130288853623385014}
   - {fileID: 756438088179529829}
   - {fileID: 5559851219651979531}
   - {fileID: -6455709466241294722}
@@ -885,13 +883,43 @@ MonoBehaviour:
   - {fileID: 2894789001147440259}
   - {fileID: 2634504487922844552}
   - {fileID: -8384218826752075996}
+  - {fileID: 299597657353200181}
+  - {fileID: 1270924898338713252}
+  - {fileID: 1387086612047296594}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4380124260814938916}
   StringsBanks:
   - {fileID: 6257823701904196731}
-  cacheTime: 638506235165076863
+  cacheTime: 638506298252492021
   cacheVersion: 131617
+--- !u!114 &299597657353200181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/LANGUAGES/PressA
+  m_EditorClassIdentifier: 
+  Path: event:/LANGUAGES/PressA
+  Guid:
+    Data1: -2110470579
+    Data2: 1278107948
+    Data3: 24545201
+    Data4: -104410988
+  Banks:
+  - {fileID: -4380124260814938916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1436
 --- !u!114 &667831928141992329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1000,33 +1028,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3004
---- !u!114 &1130288853623385014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/LANGUAGES/Press S Spanish
-  m_EditorClassIdentifier: 
-  Path: event:/LANGUAGES/Press S Spanish
-  Guid:
-    Data1: -427743103
-    Data2: 1264851347
-    Data3: 596627898
-    Data4: -1073382416
-  Banks:
-  - {fileID: -4380124260814938916}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1906
 --- !u!114 &1264898269182157110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,6 +1055,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2455
+--- !u!114 &1270924898338713252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/LANGUAGES/PressS
+  m_EditorClassIdentifier: 
+  Path: event:/LANGUAGES/PressS
+  Guid:
+    Data1: -427743103
+    Data2: 1264851347
+    Data3: 596627898
+    Data4: -1073382416
+  Banks:
+  - {fileID: -4380124260814938916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1906
 --- !u!114 &1280662118025353935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1108,6 +1136,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 11075
+--- !u!114 &1387086612047296594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/LANGUAGES/LanguagePress
+  m_EditorClassIdentifier: 
+  Path: event:/LANGUAGES/LanguagePress
+  Guid:
+    Data1: -258524648
+    Data2: 1274384092
+    Data3: -1319453558
+    Data4: -314335286
+  Banks:
+  - {fileID: -4380124260814938916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5150
 --- !u!114 &1435915836765750192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1771,10 +1826,10 @@ MonoBehaviour:
   Path: Assets/FMOD/StudentJam24/studentJam24/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638506235165076863
+  lastModified: 638506298252492021
   FileSizes:
   - Name: Desktop
-    Value: 4020
+    Value: 4058
   Exists: 1
 --- !u!114 &6732458401466698697
 MonoBehaviour:
@@ -1830,33 +1885,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3160
---- !u!114 &6936605827861175298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/LANGUAGES/Press A English
-  m_EditorClassIdentifier: 
-  Path: event:/LANGUAGES/Press A English
-  Guid:
-    Data1: -2110470579
-    Data2: 1278107948
-    Data3: 24545201
-    Data4: -104410988
-  Banks:
-  - {fileID: -4380124260814938916}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1436
 --- !u!114 &6965692907058278446
 MonoBehaviour:
   m_ObjectHideFlags: 0
