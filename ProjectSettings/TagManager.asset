@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Meteorito
   - Nave
+  - Teleporter
   layers:
   - Default
   - TransparentFX
@@ -13,10 +14,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - SouthCollider
+  - NorthCollider
+  - EastCollider
+  - WestCollider
   - 
   - 
   - 
