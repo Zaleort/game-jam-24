@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e2bb8358-ed3d-4d1d-8592-2e2d55ae4665}">
+		<property name="assetPath">
+			<value>ElevenLabs_2024-05-06T18 17 26_Amanda AudioNauta-ENGL_gen_s50_sb75_se0_b_m2.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>4.5975510204081633</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{049e32d2-ea6e-4dd0-9e34-6933250b68c3}</destination>
+		</relationship>
+	</object>
+</objects>
